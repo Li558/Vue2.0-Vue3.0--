@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更新时的一个问题</title>
+    <script src="../js/vue.js"></script>
+    <!-- <script src="../js/vue.min.js"></script> -->
+
+</head>
+
+<body>
+
+    <!-- 准备好一个容器 -->
+    <div id="root">
+           <h2>学校名称: {{name}}</h2>
+           <h2>学校地址: {{address}}</h2>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
+
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                name: '尚硅谷',
+                address: '宏福苑',
+                student:{
+                    name: 'Tom',
+                    age: {
+                        rAge: 40,
+                        sAge: 18,
+                    },
+                    friends: [
+                        {name: 'juary', age: 35}
+                    ]
+                }
+            },
+
+        })
+    </script>
+</body>
+
+</html>

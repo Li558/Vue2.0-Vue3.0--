@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>姓名案例_watch实现</title>
+    <script src="../js/vue.js"></script>
+    <!-- <script src="../js/vue.min.js"></script> -->
+
+</head>
+
+<body>
+    <!-- 
+        computer和watch之间得区别：
+            1.computerd能完成得功能,watch都可以完成
+            2.watch能完成得功能,computer不一定能完成，例如watch可以进行异步操作
+        两个重要得小原则：
+            1.所被Vue管理得函数， 最好写成普通函数，这样this得指向才是vm或组件实例对象
+            2.所有不被Vue所管理得函数(定时器得回调函数， ajax得回调函数， Promise得回调函数等) 最好写成箭头函数
+            这样this得指向才是vm或组件实例对象
+     -->
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        姓:<input type="text" v-model="firstName"><br/> 
+        名:<input type="text" v-model="lastName"><br/> 
+        全名: <span>{{fullName}}</span><br/><br/>
+    </div>
+
+    <script>
+        Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
+
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                firstName: '张',
+                lastName: '三',
+                fullName: '张-三'
+            },
+            watch:{
+                firstName(val) {
+                    setTimeout(() =>{
+                    this.fullName = val + '-' + this.lastName;
+                    }, 1000);
+                },
+                lastName(val) {
+                    this.fullName = this.firstName + '-' + val;
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>
