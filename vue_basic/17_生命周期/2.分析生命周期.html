@@ -14,8 +14,11 @@
 <body>
     <!-- 准备好一个容器 -->
     <div id="root">
+        <h2 v-text="n">当前的n值是: {{n}}</h2>
         <h2>当前的n值是: {{n}}</h2>
+
         <button @click ="add">点我加一</button>
+        <button @click ="bye">销毁vm</button>
     </div>
 
     <script>
@@ -39,6 +42,16 @@
             methods: {
                 add(){
                     this.n++;
+                    console.log('add');
+                },
+                bye(){
+                    console.log('bye');
+                    this.$destroy();
+                }
+            },
+            watch:{
+                n(){
+                    console.log('n变了');
                 }
             },
             beforeCreate() {
@@ -59,9 +72,16 @@
             },
             updated(){
                 console.log('update');
-                console.log(this.n);
-                debugger;
+            },
+            beforeDestroy(){
+                //这个阶段能访问数据 但是没有效果
+                // this.add();
+                console.log('beforeDestroy');
+            },
+            destroy(){
+                console.log('destroy');
             }
+
 
 
         })
