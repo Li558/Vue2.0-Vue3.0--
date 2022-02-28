@@ -1,1 +1,0 @@
-{"version":3,"file":"js/app.3728eacd.js","mappings":"YASAA,QAAQC,IAAI,M","sources":["webpack://vue_test/./src/main.js"],"sourcesContent":["// import Vue from 'vue'\n// import App from './App.vue'\n\n// Vue.config.productionTip = false\n\n// new Vue({\n//   render: h => h(App),\n// }).$mount('#app')\n\nconsole.log(666);"],"names":["console","log"],"sourceRoot":""}
