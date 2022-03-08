@@ -1,6 +1,7 @@
 <template>
 	<li>
 		<label>
+			<!-- 有个问题 -->
 			<input type="checkbox" :checked="todo.done" @change="handleCheck(todo.id)"/>
 			<!-- 如下代码也能实现功能，但是不太推荐，因为有点违反原则，因为修改了props -->
 			<!-- <input type="checkbox" v-model="todo.done"/> -->
@@ -43,7 +44,8 @@
 	}
 
 	li label {
-		float: left;
+
+		/* float: left; */
 		cursor: pointer;
 	}
 
