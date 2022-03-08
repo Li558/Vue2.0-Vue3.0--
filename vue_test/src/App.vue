@@ -1,36 +1,34 @@
 <template>
 	<div>
-		<div class="row">
-			<Banner></Banner>
-		</div>
-		<div class="row">
-			<div class="col-xs-2 col-xs-offset-2">
-				<div class="list-group">
-					<!-- 原始html中我们使用a标签实现页面的跳转 -->
-				<!-- <a class="list-group-item active" href="./about.html">About</a> -->
-				<!-- <a class="list-group-item" href="./home.html">Home</a> -->
-					<!--  -->
-				<router-link  class="list-group-item" active-class="active" :to="{name:'guanyu'}">About</router-link>
-				<router-link  class="list-group-item" active-class="active" to="/home">Home</router-link>
+		<button>原生按钮</button>
+		<input type="text">
+		<atguigu-row>
+			<atguigu-button>默认按钮</atguigu-button>
+			<atguigu-button type="primary">主要按钮</atguigu-button>
+			<atguigu-button type="success">成功按钮</atguigu-button>
+			<atguigu-button type="info">信息按钮</atguigu-button>
+			<atguigu-button type="warning">警告按钮</atguigu-button>
+			<atguigu-button type="danger">危险按钮</atguigu-button>
+		</atguigu-row>
+		<atguigu-datePicker
+			v-model="value1"
+			type="date"
+			placeholder="选择日期">
+		</atguigu-datePicker>
 
-				</div>
-			</div>
-			<div class="col-xs-6">
-				<div class="panel">
-					<div class="panel-body">
-						<!-- 指定组件的呈现位置 -->
-						<router-view></router-view>
-					</div>
-				</div>
-			</div>
-		</div>
+		<el-row>
+			<atguigu-row icon="el-icon-search" circle></atguigu-row>
+			<atguigu-row type="primary" icon="el-icon-edit" circle></atguigu-row>
+			<atguigu-row type="success" icon="el-icon-check" circle></atguigu-row>
+			<atguigu-row type="info" icon="el-icon-message" circle></atguigu-row>
+			<atguigu-row type="warning" icon="el-icon-star-off" circle></atguigu-row>
+			<atguigu-row type="danger" icon="el-icon-delete" circle></atguigu-row>
+		</el-row>
 	</div>
 </template>
 
 <script>
-	import Banner from './components/Banner.vue'
 	export default {
 		name:'App',
-		components:{Banner}
 	}
 </script>

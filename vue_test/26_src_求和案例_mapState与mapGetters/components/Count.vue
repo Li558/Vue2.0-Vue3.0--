@@ -53,7 +53,6 @@ export default {
         ...mapGetters({bigSum:'bigSum'})
         //借助mapGetters生成计算属性, 从getters中读取数据。（数组写法）
         // ...mapGetters(['bigSum'])
-        
     },
     methods: {
         increment(){

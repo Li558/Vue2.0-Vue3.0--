@@ -14,13 +14,7 @@ export default {
     name: 'Detail',
     props:['id', 'title'],
     computed:{
-        // id(){
-        //     return this.$route.params.id
-        // },
-        // title(){
-        //     return this.$route.params.title
-
-        // }
+        
     },
     mounted() {
         console.log(this.$route);
