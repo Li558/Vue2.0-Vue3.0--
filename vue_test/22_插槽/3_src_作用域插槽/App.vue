@@ -18,6 +18,7 @@
 		</Category>
 
 		<Category title="游戏">
+			<!-- slot-scope 新旧API -->
 			<template slot-scope="{games}">
 				<h4 v-for="(g,index) in games" :key="index">{{g}}</h4>
 			</template>

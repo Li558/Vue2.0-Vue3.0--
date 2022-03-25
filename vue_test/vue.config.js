@@ -7,8 +7,8 @@ module.exports = {
   pages: {
     index: {
       // entry for the page
-      // entry: 'src/main.js',
-      entry:'09_src_TodoList_本地存储/main.js'
+      entry: '34_src_路由的params参数/main.js',
+      // entry:'09_src_TodoList_本地存储/main.js'
     },
   },
   lintOnSave: false,//语法检查

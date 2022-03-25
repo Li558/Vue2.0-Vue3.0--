@@ -8,8 +8,8 @@
             <router-link active-class="active" :to="{
                 path:'/home/message/detail',
                 query:{
-                        id:m.id,
-                        title:m.title
+                    id:m.id,
+                    title:m.title
                 }
             }">
             {{m.title}}
