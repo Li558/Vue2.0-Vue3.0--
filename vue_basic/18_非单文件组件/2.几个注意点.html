@@ -3,65 +3,65 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>几个注意点</title>
     <script src="../js/vue.js"></script>
     <!-- <script src="../js/vue.min.js"></script> -->
 </head>
 <body>
-    <!-- 准备好一个容器 -->
-    <div id="root">
-        {{msg}}
-        <myschool></myschool>
-        <myschool/>
-    </div>
+<!-- 准备好一个容器 -->
+<div id="root">
+    {{msg}}
+    <myschool></myschool>
+    <myschool/>
+</div>
 
-    <script>
-        Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
-        //完整写法
-        // const s = Vue.extend({
-        //     name: 'atguitu',//改变Vue的组件名字
-        //     template:`
-        //         <div>
-        //             <h2>学校名称 :{{name}}</h2>
-        //             <h2>学校地址 :{{address}}</h2>
-        //         </div>
-        //     `,
-        //     data(){
-        //         return {
-        //             name: '尚硅谷',
-        //             address: '北京'
-        //         }
-        //     }
-        // })
-        //简写
-        const s = {
-            name: 'atguitu',//改变Vue的组件名字
-            template:`
+<script>
+    Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
+    //完整写法
+    // const s = Vue.extend({
+    //     name: 'atguitu',//改变Vue的组件名字
+    //     template:`
+    //         <div>
+    //             <h2>学校名称 :{{name}}</h2>
+    //             <h2>学校地址 :{{address}}</h2>
+    //         </div>
+    //     `,
+    //     data(){
+    //         return {
+    //             name: '尚硅谷',
+    //             address: '北京'
+    //         }
+    //     }
+    // })
+    //简写
+    const s = {
+        name: 'atguitu',//改变Vue的组件名字
+        template: `
                 <div>
                     <h2>学校名称 :{{name}}</h2>
                     <h2>学校地址 :{{address}}</h2>
                 </div>
             `,
-            data(){
-                return {
-                    name: '尚硅谷',
-                    address: '北京'
-                }
+        data() {
+            return {
+                name: '尚硅谷',
+                address: '北京'
             }
-        
         }
-        new Vue({
-            el: '#root',
-            data: {
-                msg: '欢迎学校Vue'
-            },
-            components: {
-                myschool:s
-            }
-        })
-    </script>
+
+    }
+    new Vue({
+        el: '#root',
+        data: {
+            msg: '欢迎学校Vue'
+        },
+        components: {
+            myschool: s
+        }
+    })
+</script>
 </body>
 
 </html>

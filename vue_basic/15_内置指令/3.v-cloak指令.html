@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>v-cloak指令</title>
     <!-- <script src="../js/vue.js"></script> -->
     <!-- <script src="../js/vue.min.js"></script> -->
@@ -12,27 +12,27 @@
 </head>
 
 <body>
-    <!--
-        v-cloak指令(没有值):
-            1.本质是一个特殊属性，Vue实例创建完毕并接管容器后,会删掉v-cloak属性
-            2.使用css配合v-cloak可以解决网速慢时页面展示出{{xxx}}的问题
-     -->
-    <!-- 准备好一个容器 -->
-    <div id="root">
-        <h2 v-cloak>你好,{{name}}</h2>
-    </div>
-    <script src="../js/vue.js"></script>
+<!--
+    v-cloak指令(没有值):
+        1.本质是一个特殊属性，Vue实例创建完毕并接管容器后,会删掉v-cloak属性
+        2.使用css配合v-cloak可以解决网速慢时页面展示出{{xxx}}的问题
+ -->
+<!-- 准备好一个容器 -->
+<div id="root">
+    <h2 v-cloak>你好,{{name}}</h2>
+</div>
+<script src="../js/vue.js"></script>
 
-    <script>
-        Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
+<script>
+    Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
 
-        new Vue({
-            el: '#root',
-            data: { 
-                name: '尚硅谷',
-            }
-        })
-    </script>
+    new Vue({
+        el: '#root',
+        data: {
+            name: '尚硅谷',
+        }
+    })
+</script>
 </body>
 
 </html>

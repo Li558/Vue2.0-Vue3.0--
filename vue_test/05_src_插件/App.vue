@@ -13,13 +13,13 @@ import School from './components/School.vue'
 
 export default {
   name: 'App',
-  components: {Student,School},
-  data(){
-    return{
+  components: {Student, School},
+  data() {
+    return {
       name: "尚硅谷"
     }
   }
-  
+
 }
 </script>
 

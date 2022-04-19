@@ -8,13 +8,11 @@ import personOptions from './person'
 Vue.use(Vuex)
 
 
-
-
 //创建并暴露store
 export default new Vuex.Store({
     modules: {
-        countAbout:countOptions,
-        personAbout:personOptions
+        countAbout: countOptions,
+        personAbout: personOptions
     }
 })
 

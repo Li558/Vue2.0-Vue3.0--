@@ -1,35 +1,35 @@
 <template>
-    <li>
-        <label>
-              <input type="checkbox" :checked="todo.done" @change="handleCheck(todo.id)"/>
-              <!-- 如下代码也能实现功能，但是不太推荐，因为有带你违反原则，因为修改了props -->
-              <!-- <input type="checkbox" v-model="todo.done"/> -->
+  <li>
+    <label>
+      <input :checked="todo.done" type="checkbox" @change="handleCheck(todo.id)"/>
+      <!-- 如下代码也能实现功能，但是不太推荐，因为有带你违反原则，因为修改了props -->
+      <!-- <input type="checkbox" v-model="todo.done"/> -->
 
-              <span>{{todo.title}}</span>
-        </label>
-        <button class="btn btn-danger" @click="handleDelete(todo.id)" >删除</button>
-    </li>
+      <span>{{todo.title}}</span>
+    </label>
+    <button class="btn btn-danger" @click="handleDelete(todo.id)">删除</button>
+  </li>
 </template>
 
 <script>
 export default {
-    name:'MyItem',
-    //声明接收todo对象
-    props:['todo',"checkTodo","deleteTodo"],
-    methods:{
-      //勾选
-      handleCheck(id){
-        // console.log(id);
-        //通知App组件将对应的todo对象的done取反
-        this.checkTodo(id)
-      },
-      //删除
-      handleDelete(id){
-        if(confirm('Are you sure you want to delete')){
-          this.deleteTodo(id)
-        }
+  name: 'MyItem',
+  //声明接收todo对象
+  props: ['todo', "checkTodo", "deleteTodo"],
+  methods: {
+    //勾选
+    handleCheck(id) {
+      // console.log(id);
+      //通知App组件将对应的todo对象的done取反
+      this.checkTodo(id)
+    },
+    //删除
+    handleDelete(id) {
+      if (confirm('Are you sure you want to delete')) {
+        this.deleteTodo(id)
       }
     }
+  }
 }
 </script>
 
@@ -68,10 +68,12 @@ li:before {
 li:last-child {
   border-bottom: none;
 }
-li:hover{
-  background-color:#ddd
+
+li:hover {
+  background-color: #ddd
 }
-li:hover button{
+
+li:hover button {
   display: block;
 
 }

@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>列表排序</title>
     <script src="../js/vue.js"></script>
     <!-- <script src="../js/vue.min.js"></script> -->
@@ -12,56 +12,56 @@
 </head>
 
 <body>
-   
-    <!-- 准备好一个容器 -->
-    <div id="root">
-            <h2>人员列表</h2>
-            <input type="text" placeholder="请输入名字" v-model="keyWord">
-            <button @click="sortType = 2">年龄升序</button>
-            <button @click="sortType = 1">年龄降序</button>
-            <button @click="sortType = 0">原顺序</button>
-            <ul>
-                <li v-for="(p,index) of filPersons" :key="p.id">
-                    {{p.name}}-{{p.age}}-{{p.sex}}
-                    <!-- {{p}}----{{index}} -->
-                </li>
-            </ul>
-    </div>
 
-    <script>
-        Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
-        
-        new Vue({
-            el: '#root',
-            data: {
-                keyWord: '',
-                sortType: 0,//0 原顺序 1降序 2 升序
-                persons: [
-                    {id: '001',name:'马冬梅',age:19,sex:'女'},
-                    {id: '002',name:'周冬雨',age:20,sex:'女'},
-                    {id: '003',name:'周杰伦',age:21,sex:'男'},
-                    {id: '004',name:'温兆伦',age:22,sex:'男'},
-                ],
-            },
-            computed:{
-                filPersons(){
-                    const arr =  this.persons.filter((p)=>{
-                        return p.name.indexOf(this.keyWord) !== -1;
+<!-- 准备好一个容器 -->
+<div id="root">
+    <h2>人员列表</h2>
+    <input placeholder="请输入名字" type="text" v-model="keyWord">
+    <button @click="sortType = 2">年龄升序</button>
+    <button @click="sortType = 1">年龄降序</button>
+    <button @click="sortType = 0">原顺序</button>
+    <ul>
+        <li :key="p.id" v-for="(p,index) of filPersons">
+            {{p.name}}-{{p.age}}-{{p.sex}}
+            <!-- {{p}}----{{index}} -->
+        </li>
+    </ul>
+</div>
+
+<script>
+    Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
+
+    new Vue({
+        el: '#root',
+        data: {
+            keyWord: '',
+            sortType: 0,//0 原顺序 1降序 2 升序
+            persons: [
+                {id: '001', name: '马冬梅', age: 19, sex: '女'},
+                {id: '002', name: '周冬雨', age: 20, sex: '女'},
+                {id: '003', name: '周杰伦', age: 21, sex: '男'},
+                {id: '004', name: '温兆伦', age: 22, sex: '男'},
+            ],
+        },
+        computed: {
+            filPersons() {
+                const arr = this.persons.filter((p) => {
+                    return p.name.indexOf(this.keyWord) !== -1;
+                })
+                //判断一下是否需要排序
+                if (this.sortType) {
+                    arr.sort((p1, p2) => {
+                        //函数体
+                        return this.sortType === 1 ? p2.age - p1.age : p1.age - p2.age;
                     })
-                    //判断一下是否需要排序
-                    if(this.sortType){
-                        arr.sort((p1, p2)=>{
-                            //函数体
-                            return this.sortType === 1 ? p2.age - p1.age : p1.age - p2.age;
-                        })
-                    }
-                    return arr;
-
                 }
-            }
+                return arr;
 
-        })
-    </script>
+            }
+        }
+
+    })
+</script>
 </body>
 
 </html>

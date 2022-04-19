@@ -5,14 +5,14 @@ import Hmoe from '../components/HomeName.vue'
 
 //创建路由器
 export default new VueRouter({
-    routes:[
+    routes: [
         {
             path: '/about',
-            component:About
+            component: About
         },
         {
             path: '/home',
-            component:Hmoe
+            component: Hmoe
         }
     ]
 })

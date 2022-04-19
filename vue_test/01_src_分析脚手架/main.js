@@ -23,10 +23,10 @@ Vue.config.productionTip = false
 // }).$mount('#app')
 
 new Vue({
-  el: '#app',
-  render:h =>h(App)
-  // template:`<App></App>`,
-  // template:`<h2>你好</h2>`,
-  // component:{App},
+    el: '#app',
+    render: h => h(App)
+    // template:`<App></App>`,
+    // template:`<h2>你好</h2>`,
+    // component:{App},
 })
 

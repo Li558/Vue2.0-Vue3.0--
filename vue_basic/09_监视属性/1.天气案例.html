@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>天气案例</title>
     <script src="../js/vue.js"></script>
     <!-- <script src="../js/vue.min.js"></script> -->
@@ -13,35 +13,35 @@
 
 <body>
 
-    <!-- 准备好一个容器 -->
-    <div id="root">
-        <h2>今天天气很{{info}}</h2>
-        <!-- 绑定事件的时候:@xxx ="yyy" yyy可以写一些简单的语句 -->
-        <!-- <button @click="isHot = !isHot">切换天气</button> -->
-        <button @click="changeWeather">切换天气</button>
+<!-- 准备好一个容器 -->
+<div id="root">
+    <h2>今天天气很{{info}}</h2>
+    <!-- 绑定事件的时候:@xxx ="yyy" yyy可以写一些简单的语句 -->
+    <!-- <button @click="isHot = !isHot">切换天气</button> -->
+    <button @click="changeWeather">切换天气</button>
 
-    </div>
+</div>
 
-    <script>
-        Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
+<script>
+    Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
 
-        const vm = new Vue({
-            el: '#root',
-            data: {
-                isHot: true,
-            },
-            computed: {
-                info(){
-                    return this.isHot ? '炎热' : '凉爽';
-                }
-            },
-            methods: {
-                changeWeather(){
-                    this.isHot = ! this.isHot;
-                }
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            isHot: true,
+        },
+        computed: {
+            info() {
+                return this.isHot ? '炎热' : '凉爽';
             }
-        })
-    </script>
+        },
+        methods: {
+            changeWeather() {
+                this.isHot = !this.isHot;
+            }
+        }
+    })
+</script>
 </body>
 
 </html>

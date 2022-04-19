@@ -14,7 +14,7 @@ Vue.use(VueRouter)
 
 //创建vm
 new Vue({
-	el:'#root',
-	render: h => h(App),
-	router:router
+    el: '#root',
+    render: h => h(App),
+    router: router
 })

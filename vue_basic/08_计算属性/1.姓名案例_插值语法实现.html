@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>姓名案例_插值语法实现</title>
     <script src="../js/vue.js"></script>
     <!-- <script src="../js/vue.min.js"></script> -->
@@ -13,23 +13,23 @@
 
 <body>
 
-    <!-- 准备好一个容器 -->
-    <div id="root">
-        姓:<input type="text" v-model="firstName"><br/> 名:
-        <input type="text" v-model="lastName"><br/> 全名: <span>{{firstName.slice(0,3)}}-{{lastName}}</span>
-    </div>
+<!-- 准备好一个容器 -->
+<div id="root">
+    姓:<input type="text" v-model="firstName"><br/> 名:
+    <input type="text" v-model="lastName"><br/> 全名: <span>{{firstName.slice(0,3)}}-{{lastName}}</span>
+</div>
 
-    <script>
-        Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
+<script>
+    Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
 
-        new Vue({
-            el: '#root',
-            data: {
-                firstName: '张',
-                lastName: '三'
-            }
-        })
-    </script>
+    new Vue({
+        el: '#root',
+        data: {
+            firstName: '张',
+            lastName: '三'
+        }
+    })
+</script>
 </body>
 
 </html>

@@ -9,28 +9,28 @@ import Detail from '../pages/Detail.vue'
 
 //创建路由器
 export default new VueRouter({
-    routes:[
+    routes: [
         // 一级路由
         {
             path: '/about',
-            component:About
+            component: About
         },
         {
             path: '/home',
-            component:Home,
-            children:[
-                { 
-                    path:'news',
-                    component:News,
+            component: Home,
+            children: [
+                {
+                    path: 'news',
+                    component: News,
                 },
                 {
-                    path:'message',
-                    component:Message,
-                    children:[
-                        { 
-                            path:'detail',
-                            component:Detail,
-                            
+                    path: 'message',
+                    component: Message,
+                    children: [
+                        {
+                            path: 'detail',
+                            component: Detail,
+
                         }
                     ]
 

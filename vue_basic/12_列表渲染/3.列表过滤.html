@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>列表过滤</title>
     <script src="../js/vue.js"></script>
     <!-- <script src="../js/vue.min.js"></script> -->
@@ -12,71 +12,71 @@
 </head>
 
 <body>
-   
-    <!-- 准备好一个容器 -->
-    <div id="root">
-            <h2>人员列表</h2>
-            <input type="text" placeholder="请输入名字" v-model="keyWord">
-            <ul>
-                <li v-for="(p,index) of filPersons" :key="p.id">
-                    {{p.name}}-{{p.age}}-{{p.sex}}
-                    <!-- {{p}}----{{index}} -->
-                </li>
-            </ul>
-    </div>
 
-    <script>
-        Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
-        //#region
-        //用watch实现
-        // new Vue({
-        //     el: '#root',
-        //     data: {
-        //         keyWord: '',
-        //         persons: [
-        //             {id: '001',name:'马冬梅',age:19,sex:'女'},
-        //             {id: '002',name:'周冬雨',age:20,sex:'女'},
-        //             {id: '003',name:'周杰伦',age:21,sex:'男'},
-        //             {id: '004',name:'温兆伦',age:22,sex:'男'},
-        //         ],
-        //         filPersons: [],
-        //     },
-        //     watch: {
-        //         keyWord:{
-        //                 immediate:true,//初始化时让handler调用一下
-        //                 handler(val){
-        //                  // console.log("keyWord被修改了");
-        //                     this.filPersons = this.persons.filter((p)=>{
-        //                         return p.name.indexOf(val) !== -1; //
-        //             })
-        //         }
+<!-- 准备好一个容器 -->
+<div id="root">
+    <h2>人员列表</h2>
+    <input placeholder="请输入名字" type="text" v-model="keyWord">
+    <ul>
+        <li :key="p.id" v-for="(p,index) of filPersons">
+            {{p.name}}-{{p.age}}-{{p.sex}}
+            <!-- {{p}}----{{index}} -->
+        </li>
+    </ul>
+</div>
 
-        //         }
-        //     }
-        // })
-        //#endregion
-        //用computerd实现
-        new Vue({
-            el: '#root',
-            data: {
-                keyWord: '',
-                persons: [
-                    {id: '001',name:'马冬梅',age:19,sex:'女'},
-                    {id: '002',name:'周冬雨',age:20,sex:'女'},
-                    {id: '003',name:'周杰伦',age:21,sex:'男'},
-                    {id: '004',name:'温兆伦',age:22,sex:'男'},
-                ],
-            },
-            computed:{
-                filPersons(){
-                    return this.persons.filter((p)=>{
-                        return p.name.indexOf(this.keyWord) !== -1;
-                    })
-                }
+<script>
+    Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
+    //#region
+    //用watch实现
+    // new Vue({
+    //     el: '#root',
+    //     data: {
+    //         keyWord: '',
+    //         persons: [
+    //             {id: '001',name:'马冬梅',age:19,sex:'女'},
+    //             {id: '002',name:'周冬雨',age:20,sex:'女'},
+    //             {id: '003',name:'周杰伦',age:21,sex:'男'},
+    //             {id: '004',name:'温兆伦',age:22,sex:'男'},
+    //         ],
+    //         filPersons: [],
+    //     },
+    //     watch: {
+    //         keyWord:{
+    //                 immediate:true,//初始化时让handler调用一下
+    //                 handler(val){
+    //                  // console.log("keyWord被修改了");
+    //                     this.filPersons = this.persons.filter((p)=>{
+    //                         return p.name.indexOf(val) !== -1; //
+    //             })
+    //         }
+
+    //         }
+    //     }
+    // })
+    //#endregion
+    //用computerd实现
+    new Vue({
+        el: '#root',
+        data: {
+            keyWord: '',
+            persons: [
+                {id: '001', name: '马冬梅', age: 19, sex: '女'},
+                {id: '002', name: '周冬雨', age: 20, sex: '女'},
+                {id: '003', name: '周杰伦', age: 21, sex: '男'},
+                {id: '004', name: '温兆伦', age: 22, sex: '男'},
+            ],
+        },
+        computed: {
+            filPersons() {
+                return this.persons.filter((p) => {
+                    return p.name.indexOf(this.keyWord) !== -1;
+                })
             }
+        }
 
-        })
-    </script>
+    })
+</script>
 </body>
 
 </html>

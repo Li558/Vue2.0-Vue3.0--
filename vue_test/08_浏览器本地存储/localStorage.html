@@ -2,40 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>localStorage</title>
 </head>
 <body>
-    <h2>localStorage</h2>
-    <button onclick="saveData()">保存数据</button>
-    <button onclick="readData()">查看数据</button>
-    <button onclick="deleteData()">删除数据</button>
-    <button onclick="clearData()">清空</button>
+<h2>localStorage</h2>
+<button onclick="saveData()">保存数据</button>
+<button onclick="readData()">查看数据</button>
+<button onclick="deleteData()">删除数据</button>
+<button onclick="clearData()">清空</button>
 
 
-    <script>
-        let p  ={name:'张三', age:18}
-        function saveData() { 
-            localStorage.setItem('msg','hello!!!')
-            localStorage.setItem('msg2','asdaw')
-            localStorage.setItem('msg3',JSON.stringify(p))
-        }
-        function readData() { 
-           console.log(localStorage.getItem('msg')) 
-           console.log(localStorage.getItem('msg2')) 
+<script>
+    let p = {name: '张三', age: 18}
+
+    function saveData() {
+        localStorage.setItem('msg', 'hello!!!')
+        localStorage.setItem('msg2', 'asdaw')
+        localStorage.setItem('msg3', JSON.stringify(p))
+    }
+
+    function readData() {
+        console.log(localStorage.getItem('msg'))
+        console.log(localStorage.getItem('msg2'))
         //    console.log(localStorage.getItem('msg3')) 
         const result = localStorage.getItem('msg3')
         console.log(JSON.parse(result));
 
-        }
-        function deleteData() { 
-            localStorage.removeItem('msg')
-        }
-        function clearData(){
-            
-            localStorage.clear()
-        }
-    </script>
+    }
+
+    function deleteData() {
+        localStorage.removeItem('msg')
+    }
+
+    function clearData() {
+
+        localStorage.clear()
+    }
+</script>
 </body>
 </html>

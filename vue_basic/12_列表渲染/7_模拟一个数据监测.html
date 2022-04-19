@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Document</title>
-    
+
 </head>
 <body>
 <script>
@@ -34,23 +34,24 @@
     //准备一个vm实例对象
     let vm = {};
     vm._data = data = obs;
-    function Observer(obj) { 
+
+    function Observer(obj) {
         //汇总对象中所有的属性形成一个数组
         const keys = Object.keys(obj);
 
         //遍历
-        keys.forEach((k)=>{
-            Object.defineProperty(this, k,{
-                get(){
+        keys.forEach((k) => {
+            Object.defineProperty(this, k, {
+                get() {
                     return obj[k]
                 },
-                set(val){
+                set(val) {
                     console.log(`${k}被改了, 我要去解析模板, 生成虚拟DOM....我要开始忙了`);
                     obj[k] = val;
                 }
             })
         })
-     }
+    }
 </script>
 </body>
 </html>

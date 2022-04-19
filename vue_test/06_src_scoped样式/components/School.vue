@@ -6,21 +6,21 @@
 </template>
 
 <script>
-    export default {
-    // eslint-disable-next-line vue/multi-word-component-names
-    name: 'School',
-    data(){
-        return {
-            name: '尚硅谷aerert',
-            address: '北京昌平'
-        }
-    },
-    
+export default {
+  // eslint-disable-next-line vue/multi-word-component-names
+  name: 'School',
+  data() {
+    return {
+      name: '尚硅谷aerert',
+      address: '北京昌平'
+    }
+  },
+
 }
 </script>
 
 <style scoped>
-.demo{
-    background-color:skyblue;
+.demo {
+  background-color: skyblue;
 }
 </style>

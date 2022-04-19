@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>天气案例_深度监视</title>
     <script src="../js/vue.js"></script>
     <!-- <script src="../js/vue.min.js"></script> -->
@@ -12,64 +12,64 @@
 </head>
 
 <body>
-    <!-- 准备好一个容器 -->
-    <div id="root">
-        <h2>今天天气很{{info}}</h2>
-        <button @click="changeWeather">切换天气</button>
-        <hr/>
-        
-    </div>
+<!-- 准备好一个容器 -->
+<div id="root">
+    <h2>今天天气很{{info}}</h2>
+    <button @click="changeWeather">切换天气</button>
+    <hr/>
 
-    <script>
-        Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
+</div>
 
-        const vm = new Vue({
-            el: '#root',
-            data: {
-                isHot: true,
-                
-            },
-            computed: {
-                info(){
-                    return this.isHot ? '炎热' : '凉爽';
-                }
-            },
-            methods: {
-                changeWeather(){
-                    this.isHot = ! this.isHot;
-                }
-            },
-           //第一种
-            watch: {
-                //正常写法
-                // isHot:{
-                //     // immediate:true,//初始化时让handler调用一下
-                //     //当handler什么时候调用？ 当isHot发生改变时
-                //     handler(newValue,oldValue){
-                //         console.log('isHot被修改了!', newValue, oldValue);
-                //     }
-                // }
-                //简写
-                // isHot(newValue, oldValue){
-                //     console.log('isHot被修改了!', newValue, oldValue);
-                // }
+<script>
+    Vue.config.productionTip = false; //阻止vue在启动时生成生产提升
+
+    const vm = new Vue({
+        el: '#root',
+        data: {
+            isHot: true,
+
+        },
+        computed: {
+            info() {
+                return this.isHot ? '炎热' : '凉爽';
             }
-        })
-        //完整写法
-        // vm.$watch('isHot',{
-        //     immediate:true,//初始化时让handler调用一下
-        //     //当handler什么时候调用？ 当isHot发生改变时
-        //     deep: true,
-        //     handler(newValue,oldValue){
-        //         console.log('isHot被修改了!', newValue, oldValue);
-        //     }
-        // })
-        //简写
-        vm.$watch('isHot',function(newValue,oldValue){
-            console.log('isHot被修改了!', newValue, oldValue);
-        })
-        
-    </script>
+        },
+        methods: {
+            changeWeather() {
+                this.isHot = !this.isHot;
+            }
+        },
+        //第一种
+        watch: {
+            //正常写法
+            // isHot:{
+            //     // immediate:true,//初始化时让handler调用一下
+            //     //当handler什么时候调用？ 当isHot发生改变时
+            //     handler(newValue,oldValue){
+            //         console.log('isHot被修改了!', newValue, oldValue);
+            //     }
+            // }
+            //简写
+            // isHot(newValue, oldValue){
+            //     console.log('isHot被修改了!', newValue, oldValue);
+            // }
+        }
+    })
+    //完整写法
+    // vm.$watch('isHot',{
+    //     immediate:true,//初始化时让handler调用一下
+    //     //当handler什么时候调用？ 当isHot发生改变时
+    //     deep: true,
+    //     handler(newValue,oldValue){
+    //         console.log('isHot被修改了!', newValue, oldValue);
+    //     }
+    // })
+    //简写
+    vm.$watch('isHot', function (newValue, oldValue) {
+        console.log('isHot被修改了!', newValue, oldValue);
+    })
+
+</script>
 </body>
 
 </html>
