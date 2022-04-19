@@ -1,7 +1,9 @@
-.DS_Store
+#vue配置文件
 node_modules
-/dist
+dist/
 
+#
+*.txt
 
 # local env files
 .env.local
