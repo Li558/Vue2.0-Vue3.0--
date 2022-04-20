@@ -4,6 +4,7 @@ import App from './App.vue'
 
 //创建实例对象---app（类似之前Vue2中的vm，但app比vm更轻）
 const app = createApp(App)
+console.log('@@@', app)
 setTimeout(() => {
     //挂载
     app.mount('#app')
