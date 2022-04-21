@@ -1,25 +1,31 @@
 <template>
-  <Demo/>
-
+  <div class="app">
+      <h3>我是App组件</h3>
+      <Suspense>
+       <template v-slot:default>
+         <Child/>
+       </template>
+        <template v-slot:fallback>
+          <h3>加载中</h3>
+        </template>
+      </Suspense>
+  </div>
 </template>
 
 <script>
-import Demo from "@/components/Demo";
-
+// import Child from "@/components/Child";//静态引入
+import {defineAsyncComponent} from "vue";
+const Child = defineAsyncComponent(()=>import('./components/Child'))//异步引入
 export default {
   name: 'App',
-  components: {Demo},
+  components:{Child},
 
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.app {
+  background-color: gray;
+  padding: 10px;
 }
 </style>
